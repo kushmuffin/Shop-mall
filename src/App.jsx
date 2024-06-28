@@ -1,21 +1,24 @@
 import Header from './components/Header.jsx';
 import Shop from './components/Shop.jsx';
-import Product from './components/Product.jsx'
-import { DUMMY_PRODUCTS } from './dummy-products.js';
-import CartContextProvider from './store/shopping-cart-context.jsx';
+import Product from './components/Product.jsx';
+import Footer from './components/Footer.jsx';
+import CartContextProvider, { CartContext } from './store/shopping-cart-context.jsx';
+import { useContext } from 'react';
 
 function App() {
+  const { filteredProducts } = useContext(CartContext);
 
   return (
     <CartContextProvider>
       <Header />
       <Shop>
-        {DUMMY_PRODUCTS.map((product) => (
+        {filteredProducts.map((product) => (
           <li key={product.id}>
             <Product {...product} />
           </li>
         ))}
       </Shop>
+      <Footer />
     </CartContextProvider>
   );
 }

@@ -1,11 +1,15 @@
 import { createContext, useReducer } from 'react';
 
 import { DUMMY_PRODUCTS } from '../dummy-products.js';
+import Product from '../components/Product.jsx';
 
 export const CartContext = createContext({
   items: [],
   addItemToCart: () => { },
   updatedItemQuantity: () => { },
+  searchTerm: '',
+  setSearchTerm: () => { },
+  filteredProducts: DUMMY_PRODUCTS,
 });
 
 function shoppingCartReducer(state, action) {
@@ -70,6 +74,8 @@ export default function CartContextProvider({ children }) {
     shoppingCartReducer,
     {
       items: [],
+      searchTerm: '',
+      filteredProducts: DUMMY_PRODUCTS,
     });
 
   function handleAddItemToCart(id) {
@@ -89,10 +95,23 @@ export default function CartContextProvider({ children }) {
     });
   }
 
+  const setSearchTerm = (term) => {
+    shoppingCartDispatch({
+      type: 'SET_SEARCH_TERM',
+      payload: term,
+    });
+  };
+
+  const filteredProducts = DUMMY_PRODUCTS.filter((Product) =>
+  Product.title.toLowerCase().includes(shoppingCartState.searchTerm));
+
   const ctxValue = {
     items: shoppingCartState.items,
     addItemToCart: handleAddItemToCart,
     updatedItemQuantity: handleUpdateCartItemQuantity,
+    searchTerm: shoppingCartState.searchTerm,
+    setSearchTerm,
+    filteredProducts: shoppingCartState.filteredProducts,
   };
 
   return <CartContext.Provider value={ctxValue}>
