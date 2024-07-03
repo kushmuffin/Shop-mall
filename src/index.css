@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Merriweather:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -6,10 +6,10 @@
 
 body {
   margin: 0;
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#31220b, #382e1b);
+  background: linear-gradient(#322005, #3d3321);
   color: #f3e7d4;
   min-height: 100vh;
 }
@@ -28,7 +28,7 @@ body {
 }
 
 #main-title img {
-  width: 5rem;
+  width: 8rem;
   margin-right: 1.5rem;
 }
 
@@ -87,6 +87,7 @@ h1 {
 
 .product img {
   width: 100%;
+  min-height: 600px;
   border-radius: 6px;
 }
 
@@ -276,15 +277,15 @@ footer {
   background-color: #9c722e;
 }
 
-footer .icon{
+footer .icon {
   align-self: center;
 }
 
-footer p{
-  color: #edbf68
+footer p {
+  color: #edbf68;
 }
 
-.icon img{
+.icon img {
   width: 2rem;
   margin: 0 5px;
 }

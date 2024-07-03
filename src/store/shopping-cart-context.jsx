@@ -1,14 +1,13 @@
 import { createContext, useReducer } from 'react';
-
 import { DUMMY_PRODUCTS } from '../dummy-products.js';
 import Product from '../components/Product.jsx';
 
 export const CartContext = createContext({
   items: [],
-  addItemToCart: () => { },
-  updatedItemQuantity: () => { },
+  addItemToCart: () => {},
+  updatedItemQuantity: () => {},
   searchTerm: '',
-  setSearchTerm: () => { },
+  setSearchTerm: () => {},
   filteredProducts: DUMMY_PRODUCTS,
 });
 
@@ -66,23 +65,32 @@ function shoppingCartReducer(state, action) {
       items: updatedItems,
     };
   }
+
+  if (action.type === 'SET_SEARCH_TERM') {
+    return {
+      ...state,
+      searchTerm: action.payload,
+      filteredProducts: DUMMY_PRODUCTS.filter((product) =>
+        product.title.toLowerCase().includes(action.payload.toLowerCase())
+      ),
+    };
+  }
+
   return state;
 }
 
 export default function CartContextProvider({ children }) {
-  const [shoppingCartState, shoppingCartDispatch] = useReducer(
-    shoppingCartReducer,
-    {
-      items: [],
-      searchTerm: '',
-      filteredProducts: DUMMY_PRODUCTS,
-    });
+  const [shoppingCartState, shoppingCartDispatch] = useReducer(shoppingCartReducer, {
+    items: [],
+    searchTerm: '',
+    filteredProducts: DUMMY_PRODUCTS,
+  });
 
   function handleAddItemToCart(id) {
     shoppingCartDispatch({
       type: 'ADD_ITEM',
       payload: id,
-    })
+    });
   }
 
   function handleUpdateCartItemQuantity(productId, amount) {
@@ -91,7 +99,7 @@ export default function CartContextProvider({ children }) {
       payload: {
         productId,
         amount,
-      }
+      },
     });
   }
 
@@ -102,9 +110,6 @@ export default function CartContextProvider({ children }) {
     });
   };
 
-  const filteredProducts = DUMMY_PRODUCTS.filter((Product) =>
-  Product.title.toLowerCase().includes(shoppingCartState.searchTerm));
-
   const ctxValue = {
     items: shoppingCartState.items,
     addItemToCart: handleAddItemToCart,
@@ -114,7 +119,9 @@ export default function CartContextProvider({ children }) {
     filteredProducts: shoppingCartState.filteredProducts,
   };
 
-  return <CartContext.Provider value={ctxValue}>
-    {children}
-  </CartContext.Provider>
+  return (
+    <CartContext.Provider value={ctxValue}>
+      {children}
+    </CartContext.Provider>
+  );
 }

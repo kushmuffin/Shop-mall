@@ -1,10 +1,10 @@
-import { useState, useRef, useContext } from 'react';
+import { useState, useRef, useContext } from "react";
 
-import CartModal from './CartModal.jsx';
-import { CartContext } from '../store/shopping-cart-context.jsx';
+import CartModal from "./CartModal.jsx";
+import { CartContext } from "../store/shopping-cart-context.jsx";
 
 export default function Header() {
-  const [term, setTerm] = useState('');
+  const [term, setTerm] = useState("");
   const modal = useRef();
   const { items, setSearchTerm } = useContext(CartContext);
 
@@ -14,37 +14,40 @@ export default function Header() {
     modal.current.open();
   }
 
-  function handleChange(e){
+  function handleChange(e) {
     setTerm(e.target.value);
     setSearchTerm(e.target.value);
   }
 
-  let modalActions = <button>Close</button>;
+  let modalActions = <button>關閉</button>;
 
   if (cartQuantity > 0) {
     modalActions = (
       <>
-        <button>Close</button>
-        <button>Checkout</button>
+        <button>返回</button>
+        <button>確認</button>
       </>
     );
   }
 
   return (
     <>
-      <CartModal
-        ref={modal}
-        title="Your Cart"
-        actions={modalActions}
-      />
+      <CartModal ref={modal} title="你的購物車" actions={modalActions} />
       <header id="main-header">
         <div id="main-title">
-          <img src="logo.png" alt="Elegant model" />
-          <h1>Elegant Context</h1>
+          <img src="../logo-hugo.png" alt="" />
+          <h1>小書店</h1>
         </div>
-        <input type="text" placeholder='search something...' value={term} onChange={handleChange}/>
+        {/* <input
+          type="text"
+          placeholder="search something..."
+          value={term}
+          onChange={handleChange}
+        /> */}
         <p>
-          <button onClick={handleOpenCartClick}>Cart ({cartQuantity})</button>
+          <button onClick={handleOpenCartClick}>
+            我的購物車 ({cartQuantity})
+          </button>
         </p>
       </header>
     </>

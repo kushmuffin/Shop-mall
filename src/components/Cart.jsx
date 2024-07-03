@@ -13,7 +13,7 @@ export default function Cart() {
 
   return (
     <div id="cart">
-      {items.length === 0 && <p>No items in cart!</p>}
+      {items.length === 0 && <p>購物車還是空的!</p>}
       {items.length > 0 && (
         <ul id="cart-items">
           {items.map((item) => {
@@ -40,7 +40,7 @@ export default function Cart() {
         </ul>
       )}
       <p id="cart-total-price">
-        Cart Total: <strong>{formattedTotalPrice}</strong>
+        總金額: <strong>{formattedTotalPrice}</strong>
       </p>
     </div>
   );
