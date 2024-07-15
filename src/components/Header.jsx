@@ -2,6 +2,7 @@ import { useState, useRef, useContext } from "react";
 
 import CartModal from "./CartModal.jsx";
 import { CartContext } from "../store/shopping-cart-context.jsx";
+import logo from "../assets/icon/logo.jpg";
 
 export default function Header() {
   const [term, setTerm] = useState("");
@@ -35,7 +36,7 @@ export default function Header() {
       <CartModal ref={modal} title="你的購物車" actions={modalActions} />
       <header id="main-header">
         <div id="main-title">
-          <img src="../logo-hugo.png" alt="" />
+          <img src={logo} alt="" />
           <h1>小書店</h1>
         </div>
         <p>
