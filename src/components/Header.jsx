@@ -38,12 +38,6 @@ export default function Header() {
           <img src="../logo-hugo.png" alt="" />
           <h1>小書店</h1>
         </div>
-        {/* <input
-          type="text"
-          placeholder="search something..."
-          value={term}
-          onChange={handleChange}
-        /> */}
         <p>
           <button onClick={handleOpenCartClick}>
             我的購物車 ({cartQuantity})

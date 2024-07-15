@@ -67,6 +67,31 @@ h1 {
   text-transform: uppercase;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination span {
+  margin: 0 0.5rem;
+}
+
 #products {
   list-style: none;
   margin: 0;
@@ -78,6 +103,7 @@ h1 {
 
 .product {
   height: 100%;
+  width: 420px;
   background: #5f4e33;
   border-radius: 6px;
   display: flex;
@@ -288,4 +314,16 @@ footer p {
 .icon img {
   width: 2rem;
   margin: 0 5px;
+}
+
+#shop>.title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title input {
+  height: 32px;
+  border: 1px solid #000;
+  border-radius: 5px;
 }
