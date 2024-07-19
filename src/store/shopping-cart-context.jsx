@@ -5,8 +5,8 @@ export const CartContext = createContext({
   items: [],
   addItemToCart: () => {},
   updatedItemQuantity: () => {},
-  searchTerm: '',
-  setSearchTerm: () => {},
+  // searchTerm: '',
+  // setSearchTerm: () => {},
   filteredProducts: DUMMY_PRODUCTS,
 });
 
@@ -65,15 +65,15 @@ function shoppingCartReducer(state, action) {
     };
   }
 
-  if (action.type === 'SET_SEARCH_TERM') {
-    return {
-      ...state,
-      searchTerm: action.payload,
-      filteredProducts: DUMMY_PRODUCTS.filter((product) =>
-        product.title.toLowerCase().includes(action.payload.toLowerCase())
-      ),
-    };
-  }
+  // if (action.type === 'SET_SEARCH_TERM') {
+  //   return {
+  //     ...state,
+  //     searchTerm: action.payload,
+  //     filteredProducts: DUMMY_PRODUCTS.filter((product) =>
+  //       product.title.toLowerCase().includes(action.payload.toLowerCase())
+  //     ),
+  //   };
+  // }
 
   return state;
 }
@@ -81,7 +81,7 @@ function shoppingCartReducer(state, action) {
 export default function CartContextProvider({ children }) {
   const [shoppingCartState, shoppingCartDispatch] = useReducer(shoppingCartReducer, {
     items: [],
-    searchTerm: '',
+    // searchTerm: '',
     filteredProducts: DUMMY_PRODUCTS,
   });
 
@@ -102,19 +102,19 @@ export default function CartContextProvider({ children }) {
     });
   }
 
-  const setSearchTerm = (term) => {
-    shoppingCartDispatch({
-      type: 'SET_SEARCH_TERM',
-      payload: term,
-    });
-  };
+  // const setSearchTerm = (term) => {
+  //   shoppingCartDispatch({
+  //     type: 'SET_SEARCH_TERM',
+  //     payload: term,
+  //   });
+  // };
 
   const ctxValue = {
     items: shoppingCartState.items,
     addItemToCart: handleAddItemToCart,
     updatedItemQuantity: handleUpdateCartItemQuantity,
-    searchTerm: shoppingCartState.searchTerm,
-    setSearchTerm,
+    // searchTerm: shoppingCartState.searchTerm,
+    // setSearchTerm,
     filteredProducts: shoppingCartState.filteredProducts,
   };
 

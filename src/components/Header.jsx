@@ -7,7 +7,7 @@ import logo from "../assets/icon/logo-hugo.png";
 export default function Header() {
   const [term, setTerm] = useState("");
   const modal = useRef();
-  const { items, setSearchTerm } = useContext(CartContext);
+  const { items } = useContext(CartContext);
 
   const cartQuantity = items.length;
 
@@ -15,10 +15,10 @@ export default function Header() {
     modal.current.open();
   }
 
-  function handleChange(e) {
-    setTerm(e.target.value);
-    setSearchTerm(e.target.value);
-  }
+  // function handleChange(e) {
+  //   setTerm(e.target.value);
+  //   setSearchTerm(e.target.value);
+  // }
 
   let modalActions = <button>關閉</button>;
 
