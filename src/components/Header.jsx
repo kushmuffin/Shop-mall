@@ -2,7 +2,7 @@ import { useState, useRef, useContext } from "react";
 
 import CartModal from "./CartModal.jsx";
 import { CartContext } from "../store/shopping-cart-context.jsx";
-import logo from "../assets/icon/logo.jpg";
+import logo from "../assets/icon/logo-hugo.png";
 
 export default function Header() {
   const [term, setTerm] = useState("");

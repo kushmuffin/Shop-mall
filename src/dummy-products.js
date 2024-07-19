@@ -7,6 +7,7 @@ import whyNationsFail from "./assets/Why_Nations_Fail.jpg";
 import kantOnFreedom from "./assets/Kant_on_Freedom.jpg"
 import alsoSprachZarathustra from "./assets/Also_Sprach_Zarathustra.jpg"
 import aNewInterpretation from "./assets/A_New_Interpretation.jpg"
+import dieWeltalsWilleundVorstellung from "./assets/Die_Welt_als_Wille_und_Vorstellung.jpg"
 
 
 
@@ -14,6 +15,7 @@ export const DUMMY_PRODUCTS = [
   {
     id: "p1",
     image: gunsGermsandSteel,
+    category: "社會科學",
     title: "槍砲、病菌與鋼鐵",
     author: "Jared Diamond",
     price: 16.4,
@@ -23,6 +25,7 @@ export const DUMMY_PRODUCTS = [
   {
     id: "p2",
     image: imaginedCommunities,
+    category: "社會科學",
     title: "想像的共同體:民族主義的起源與散布",
     author: "Benedict Anderson",
     price: 13.59,
@@ -32,6 +35,7 @@ export const DUMMY_PRODUCTS = [
   {
     id: "p3",
     image: seeingLikeaState,
+    category: "社會科學",
     title: "國家的視角:改善人類處境的計畫為何失敗",
     author: "James C. Scott",
     price: 25.95,
@@ -41,6 +45,7 @@ export const DUMMY_PRODUCTS = [
   {
     id: "p4",
     image: theRoadtoSerfdom,
+    category: "社會科學",
     title: "通向奴役之路",
     author: "F.A von Hayek",
     price: 13.33,
@@ -50,6 +55,7 @@ export const DUMMY_PRODUCTS = [
   {
     id: "p5",
     image: turningPointsofNationsinCrisis,
+    category: "社會科學",
     title: "動盪:國家如何化解危局、成功轉型",
     author: "Jared Diamond",
     price: 17.82,
@@ -59,6 +65,7 @@ export const DUMMY_PRODUCTS = [
   {
     id: "p6",
     image: whyNationsFail,
+    category: "社會科學",
     title: "國家為什麼會失敗",
     author: "Daron Acemoglu、James A. Robinson",
     price: 12.19,
@@ -68,8 +75,9 @@ export const DUMMY_PRODUCTS = [
   {
     id: "p7",
     image: kantOnFreedom,
+    category: "哲學思辨",
     title: "康德論自由",
-    author: "Jared Diamond",
+    author: "張雪珠",
     price: 16.4,
     description:
       "自由的核心概念在康德的建構中，除了奠定了道德法則與法權法則的普遍性、必然性與約束性之外，它還有一個軸心的關鍵作用，居間連結道德哲學與法權哲學。\n自由是實踐哲學的基本概念，藉此設定，康德業已以不言而喻的必然方式，將法權哲學的法權論，與倫理學的德行論，一併歸編列於道德哲學的大系統之內。",
@@ -77,8 +85,9 @@ export const DUMMY_PRODUCTS = [
   {
     id: "p8",
     image: alsoSprachZarathustra,
-    title: "槍砲、病菌與鋼鐵",
-    author: "Jared Diamond",
+    category: "哲學思辨",
+    title: "查拉圖斯特拉如是說",
+    author: "Friedrich Wilhelm Nietzsche",
     price: 16.4,
     description:
       "查拉圖斯特拉如是說》乃集尼采重要思想之大成，透過哲學家查拉圖斯特拉的流浪及教導，以「永遠回歸」、「上帝已死」及「超人」來闡述並回答這個問題。\n人的生命是既是無限迴圈，神又早已離開，人的一切活動和生存意義就要自行掌握和創造。\n命運無可抗拒，擺脫了神的人類要如何獨自面對這悲劇式的處境？人應擺脫動物（猿猴）的狀態，以態度和意志來決定自身存在的意義，從人類的過渡階段，走向超人。",
@@ -86,11 +95,22 @@ export const DUMMY_PRODUCTS = [
   {
     id: "p9",
     image: aNewInterpretation,
-    title: "槍砲、病菌與鋼鐵",
-    author: "Jared Diamond",
+    category: "哲學思辨",
+    title: "黑格爾新釋",
+    author: "劉創馥",
     price: 16.4,
     description:
       "德國哲學家叔本華是唯意志論的開創者，提出了對生命「表象」及「意志」的論辯，其思想以「人生是苦難」的命題為出發點，被後人認為是悲觀主義的代表，對後世精神分析學及心理學都有很大的啟發，本書就其對人性、生命價值、愛恨情感、生死思考等議題進行深入地探討，與讀者分享叔本華在苦難和慾望中帶給世人的啟示。",
+  },
+  {
+    id: "p10",
+    image: dieWeltalsWilleundVorstellung,
+    category: "哲學思辨",
+    title: "作為意志和表象的世界",
+    author: "Arthur Schopenhauer",
+    price: 16.4,
+    description:
+      "無論經過多少世紀，這本書總是在書架上以備被取下一千次、一萬次。人生是短促的，而真理的影響是深遠的，它的生命是悠久的。讓我們談真理吧。\n尼采、托爾斯泰、卡夫卡、愛因斯坦、華格納、佛洛伊德……他們全部都是叔本華的仰慕者，這位被稱為極悲觀的哲學家，以他的唯意志論和憂傷語調征服了無數後輩，就此點亮了人類思想的光輝歲月。",
   },
 ];
 
